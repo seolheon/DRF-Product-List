@@ -1,17 +1,18 @@
 from django.db import models
 
 
-class Task(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Заголовок')
-    description = models.TextField(blank=True, null=True, verbose_name='Описание')
-    important = models.BooleanField(default=False, verbose_name='Важное')
-    completed = models.BooleanField(default=False, verbose_name='Выполнено')
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=0)
+    stock = models.IntegerField()
+    picture = models.ImageField(upload_to='products/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Задача'
-        verbose_name_plural = 'Задачи'
-        ordering = ['completed']
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продуткы'
+        ordering = ['name']
 
     def __str__(self):
-        return self.title
+        return self.name
+
 

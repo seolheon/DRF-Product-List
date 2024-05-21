@@ -1,63 +1,43 @@
-from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.response import Response
 from django.views.generic import TemplateView, ListView, DetailView, RedirectView, FormView
-from .models import Task
-from core import forms
+from core import models, forms, filters, serializers
 
-class AllTasks(TemplateView):
-    template_name = 'tasks/all_tasks.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["tasks"] = Task.objects.all()
+class ProductListView(ListView):
+    template_name = 'products/plv.html'
+    model = models.Product
+
+    def get_filters(self):
+        return filters.ProductFilter(self.request.GET, queryset=self.model.objects.all())
+
+    def get_queryset(self):
+        return self.get_filters().qs
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['form'] = forms.ProductFilterForm
+        context['filters'] = self.get_filters()
+
         return context
 
 
-class ImportantTasks(TemplateView):
-    template_name = 'tasks/important_tasks.html'
+class ProductAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        qs = models.Product.objects.all()
+        serializer = serializers.ProductSerializer(qs, many=True)
+        return Response(data=serializer.data)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["tasks"] = Task.objects.filter(important=True)
-        return context
+    def post(self, request):
+        serializer = serializers.ProductSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
-
-class CompletedTasks(TemplateView):
-    template_name = 'tasks/completed_tasks.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["tasks"] = Task.objects.filter(completed=True)
-        return context
+        return Response({'message': 'OK'})
 
 
-class SimpleListView(ListView):
-    template_name = 'tasks/simple_list_view.html'
-    model = Task
-    context_object_name = "tasks"
-
-
-class SimpleDetailView(DetailView):
-    template_name = 'tasks/simple_detail_view.html'
-    model = Task
-    context_object_name = "task"
-
-
-class SimpleDetailView(DetailView):
-    template_name = 'tasks/simple_detail_view.html'
-    model = Task
-    context_object_name = "task"
-
-
-class SimpleRedirectView(RedirectView):
-    query_string = True
-    url = 'https://www.wikipedia.org/'
-
-
-class SimpleFormView(FormView):
-    template_name = 'tasks/form.html'
-    form_class = forms.SimpleForm
-    success_url = '/'
-
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+class ProductModelViewSet(ModelViewSet):
+    queryset = models.Product.objects.all()
+    filterset_class = filters.ProductFilter
+    serializer_class = serializers.ProductSerializer

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card img {
+            height: 50px;
+            object-fit: cover;
+        }
+        .filter-form {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product-item {
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% load bootstrap5 %}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Product List</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="my-4 text-center">Список товаров</h1>
+
+        <form method="get" class="filter-form">
+            {% csrf_token %}
+<!--            {% bootstrap_form form %}-->
+            {% bootstrap_form filters.form %}
+            {% buttons %}
+
+            <div class="form-row">
+                <div class="form-group col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Фильтр</button>
+                </div>
+            </div>
+            {% endbuttons %}
+        </form>
+
+        <div class="product-list">
+            {% for product in object_list %}
+                <div class="card product-item" style="width: 18rem;">
+                    {% if product.picture %}
+                        <img src="{{ product.picture.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default-product.jpg' %}" class="card-img-top" alt="Default Image">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">Цена: {{ product.price }}</p>
+                        <p class="card-text">В наличии: {{ product.stock }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

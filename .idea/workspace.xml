@@ -4,23 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14ad4b05-0ee1-4c37-a353-35690e04b43e" name="Changes" comment="minor">
-      <change afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/tasks/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/tasks/simple_detail_view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/tasks/simple_list_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/To-Do-List-Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/To-Do-List-Django.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="14ad4b05-0ee1-4c37-a353-35690e04b43e" name="Changes" comment="tests">
+      <change afterPath="$PROJECT_DIR$/core/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/products/plv.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/tasks/all_tasks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/tasks/completed_tasks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/tasks/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/tasks/important_tasks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/tasks/simple_detail_view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/tasks/simple_list_view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodcostcalc/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodcostcalc/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodcostcalc/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodcostcalc/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodcostcalc/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/_task_item.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="class-view" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,27 +74,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.models.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;django-templates&quot;,
-    &quot;last_opened_file_path&quot;: &quot;V:/Projects/Pyjects/PCC-backend/templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.models.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "drf",
+    "last_opened_file_path": "Z:/Snakes/To-Do-List-Django/core/templates/products"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\Snakes\To-Do-List-Django\core\templates\products" />
       <recent name="V:\Projects\Pyjects\PCC-backend\templates" />
       <recent name="V:\Projects\Pyjects\PCC-backend\core\templates\pcc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\Snakes\To-Do-List-Django\media" />
       <recent name="V:\Projects\Pyjects\PCC-backend\templates\inc" />
       <recent name="V:\Projects\Pyjects\PCC-backend\templates" />
       <recent name="V:\Projects\Pyjects\PCC-backend\core" />
       <recent name="V:\Projects\Pyjects\PCC-backend\prodcostcalc" />
-      <recent name="V:\Projects\Pyjects\PCC-backend\core\templates\pcc" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -204,7 +210,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716298350337</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="простые классовые представления">
+      <option name="closed" value="true" />
+      <created>1716307862775</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716307862775</updated>
+    </task>
+    <task id="LOCAL-00014" summary="tests">
+      <option name="closed" value="true" />
+      <created>1716310046676</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716310046676</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +248,18 @@
     <MESSAGE value="minor fix" />
     <MESSAGE value="initial" />
     <MESSAGE value="minor" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor" />
+    <MESSAGE value="простые классовые представления" />
+    <MESSAGE value="tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/admin.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
